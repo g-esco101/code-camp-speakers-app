@@ -24,6 +24,10 @@ cd code-camp-speakers-app
 ```
 npm install
 ```
+If this gives you an error regarding the dependencies, use the following command
+```
+npm install --force
+```
 5. Run the app
 ```
 npm run dev
