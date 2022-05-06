@@ -14,11 +14,11 @@ The course taught how to architect and build independent components in React tha
 1. Install [Node 18](https://nodejs.org)
 2. Clone this repository
 ```
-git clone https://github.com/g-esco101/conference-speaker-app.git
+git clone https://github.com/g-esco101/code-camp-speakers-app.git
 ```
 3. Change to root directory
 ```
-cd conference-speaker-app
+cd code-camp-speakers-app
 ```
 4. Install Node Packages with Dependencies
 ```
