@@ -20,7 +20,7 @@ git clone https://github.com/g-esco101/code-camp-speakers-app.git
 ```
 cd code-camp-speakers-app
 ```
-4. Install Node Packages with Dependencies
+4. Install node packages with dependencies
 ```
 npm install
 ```
