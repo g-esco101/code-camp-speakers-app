@@ -81,20 +81,65 @@ npm install react react-dom next
   }
 ```
 
-- Nextjs has file based routing built into it: Any js file that you put into your pages directory, will get executed when the user browses to the root of your website followed by the name of that js file. Create the pages directory and add a file named index.js file:
+- Nextjs has file based routing built into it: Any js file that you put into your pages directory, will get executed when the user browses to the root of your website followed by the name of that js file. Create the pages directory and add a file named index.js and a file named _document.js:
 ```
 mkdir pages
 ```
 index.js
 ```
+import App from "../src/components/App";
+
 const IndexPage = () => {
-    return (
-        <div> Bonjour la monde</div>
-    );
-}
+  return <App />;
+};
+
 export default IndexPage;
 ```
+_document.js
+```
+import Document, { Head, Html, Main, NextScript } from "next/document";
 
+class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
+  }
+
+  render() {
+    return (
+      <Html>
+        <Head>
+          <meta charSet="utf-8" />
+          <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          />
+          <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          />
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+          />
+          <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans"
+            rel="stylesheet"
+          />
+          <link href="css/local-styles.css" rel="stylesheet" />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
+}
+
+export default MyDocument;
+
+```
 - At this point, you can run the app:
 ```
 npm run dev
