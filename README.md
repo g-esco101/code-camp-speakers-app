@@ -138,8 +138,8 @@ class MyDocument extends Document {
 }
 
 export default MyDocument;
-
 ```
+
 - At this point, you can run the app:
 ```
 npm run dev
